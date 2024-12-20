@@ -19,5 +19,37 @@ namespace AdventOfCope2024
         {
             return Path.Combine(Environment.CurrentDirectory, @"..\..\..", $"Inputs\\{number}.txt");
         }
+        public static int[,] ReadArrayInt(int number)//first is x, second y 
+        {
+            IEnumerable<string> input = ReadAllLines(number);
+            int maxY = input.Count();
+            int maxX = input.First().Length;
+            int[,] output = new int[maxX,maxY];
+            
+            for(int y = 0;y < maxY;y++ ) 
+            {
+                for (int x = 0; x < maxX; x++)
+                {
+                    output[x, y] = input.ElementAt(y)[x] - '0';
+                }
+            }
+            return output;
+        }
+        public static char[,] ReadArray(int number)//first is x, second y 
+        {
+            IEnumerable<string> input = ReadAllLines(number);
+            int maxY = input.Count();
+            int maxX = input.First().Length;
+            char[,] output = new char[maxX, maxY];
+
+            for (int y = 0; y < maxY; y++)
+            {
+                for (int x = 0; x < maxX; x++)
+                {
+                    output[x, y] = input.ElementAt(y)[x];
+                }
+            }
+            return output;
+        }
     }
 }
