@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>AdventOfCope2024._04b.Program</StartupObject>
+    <StartupObject>AdventOfCope2024._07b.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
