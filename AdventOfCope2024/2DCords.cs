@@ -59,6 +59,14 @@ namespace AdventOfCope2024
         {
             return new Cords2D(a.x + b.x, a.y + b.y);
         }
+        public static Cords2D operator *(Cords2D a, int skalar)
+        {
+            return new Cords2D(a.x *skalar, a.y * skalar);
+        }
+        public static Cords2D operator *(int skalar,Cords2D a)
+        {
+            return new Cords2D(a.x * skalar, a.y * skalar);
+        }
         public static Cords2D operator -(Cords2D a, Cords2D b)
         {
             return new Cords2D(a.x - b.x, a.y - b.y);

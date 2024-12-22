@@ -58,7 +58,31 @@ namespace AdventOfCope2024
             Console.WriteLine("\n");
            
         }
-        public static int GetDistance(int x,int y,int x2,int y2)
+        public static void Print(List<int> list)
+        {
+            for (int y = 0; y < list.Count; y++)
+            {
+                Console.Write(list[y] + " ");
+            }
+            Console.WriteLine();
+            
+
+        }
+
+
+        public static Dictionary<char, List<Cords2D>> GetCordsOfAllSymbols(char[,] input)
+        {
+            Dictionary<char, List<Cords2D>> output = new Dictionary<char, List<Cords2D>>();
+            for (int x = 0; x < input.GetLength(0); x++)
+            {
+                for (int y = 0; y < input.GetLength(1); y++) //for every anthena
+                {
+                    if (!output.ContainsKey(input[x, y])) { output[input[x, y]] = new List<Cords2D>(); }
+                    output[input[x, y]].Add(new Cords2D(x, y));
+                }
+            }
+            return output;
+        }
 
     }
 }
